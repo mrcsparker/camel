@@ -10,4 +10,9 @@ path = "src/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-rustler = "0.27.0"
+rayon = "1.7.0"
+rustler = "0.29.1"
+llm = { git = "https://github.com/rustformers/llm", branch = "main", features = [
+    "models",
+    "metal",
+] }
