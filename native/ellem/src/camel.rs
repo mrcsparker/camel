@@ -13,3 +13,8 @@ pub fn camel() -> ResourceArc<Camel> {
 pub fn model_path(camel_resource: ResourceArc<Camel>, path: String) -> ResourceArc<Camel> {
     camel_resource
 }
+
+#[rustler::nif]
+pub fn generate(camel_resource: ResourceArc<Camel>, prompt: String) -> ResourceArc<Camel> {
+    camel_resource
+}

@@ -11,7 +11,8 @@ defmodule Ellem do
   def simple_chat(_, _), do: :erlang.nif_error(:nif_not_loaded)
 
   def camel(), do: :erlang.nif_error(:nif_not_loaded)
-  def model_path(_), do: :erlang.nif_error(:nif_not_loaded)
+  def model_path(_, _), do: :erlang.nif_error(:nif_not_loaded)
+  def generate(_, _), do: :erlang.nif_error(:nif_not_loaded)
 
   @doc """
   Hello world.

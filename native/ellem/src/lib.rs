@@ -58,7 +58,8 @@ rustler::init!(
         get_accelerator,
         simple_chat,
         camel::camel,
-        camel::model_path
+        camel::model_path,
+        camel::generate
     ],
     load = load
 );
