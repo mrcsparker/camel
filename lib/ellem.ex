@@ -7,7 +7,11 @@ defmodule Ellem do
     otp_app: :ellem,
     crate: :ellem
 
-  def add(_, _), do: :erlang.nif_error(:nif_not_loaded)
+  def get_accelerator(), do: :erlang.nif_error(:nif_not_loaded)
+  def simple_chat(_, _), do: :erlang.nif_error(:nif_not_loaded)
+
+  def camel(), do: :erlang.nif_error(:nif_not_loaded)
+  def model_path(_), do: :erlang.nif_error(:nif_not_loaded)
 
   @doc """
   Hello world.

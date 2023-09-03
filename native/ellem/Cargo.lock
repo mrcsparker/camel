@@ -430,6 +430,8 @@ name = "ellem"
 version = "0.1.0"
 dependencies = [
  "llm",
+ "llm-base",
+ "rand",
  "rayon",
  "rustler",
 ]

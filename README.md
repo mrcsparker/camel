@@ -1,6 +1,8 @@
 # Ellem
 
-LLMs in Elixir
+LLMs in Elixir.
+
+Ellem.accelerator
 
 ## Installation
 

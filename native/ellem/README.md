@@ -1,5 +1,7 @@
 # NIF for Elixir.Ellem
 
+https://github.com/LLukas22/llm-rs-python/blob/main/src/lib.rs - using as a starting point.
+
 ## To build the NIF module:
 
 - Your NIF will now build along with your project.

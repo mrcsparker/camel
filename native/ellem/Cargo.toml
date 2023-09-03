@@ -16,3 +16,5 @@ llm = { git = "https://github.com/rustformers/llm", branch = "main", features = 
     "models",
     "metal",
 ] }
+llm-base = { git = "https://github.com/rustformers/llm.git", branch = "main" }
+rand = "0.8.5"
