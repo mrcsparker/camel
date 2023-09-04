@@ -1,6 +1,6 @@
 # Ellem
 
-LLMs in Elixir.
+LLMs in Elixir. Being worked on.
 
 Ellem.accelerator
 
@@ -21,3 +21,10 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/ellem>.
 
+## Camel API
+
+This is a test for llama models. It is being developed as a prototype
+
+```elixir
+Ellem.camel("./open_llama_3b-f16.bin") |> Ellem.generate("Today is the best day to")
+```

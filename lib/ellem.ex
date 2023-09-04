@@ -10,8 +10,7 @@ defmodule Ellem do
   def get_accelerator(), do: :erlang.nif_error(:nif_not_loaded)
   def simple_chat(_, _), do: :erlang.nif_error(:nif_not_loaded)
 
-  def camel(), do: :erlang.nif_error(:nif_not_loaded)
-  def model_path(_, _), do: :erlang.nif_error(:nif_not_loaded)
+  def camel(_), do: :erlang.nif_error(:nif_not_loaded)
   def generate(_, _), do: :erlang.nif_error(:nif_not_loaded)
 
   @doc """
