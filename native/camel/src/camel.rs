@@ -65,7 +65,7 @@ impl Default for CamelModelParameters {
 }
 
 #[rustler::nif]
-pub fn camel(model_path: String) -> ResourceArc<Camel> {
+pub fn new(model_path: String) -> ResourceArc<Camel> {
     ResourceArc::new(Camel::new(model_path))
 }
 

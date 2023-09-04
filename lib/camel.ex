@@ -1,16 +1,16 @@
-defmodule Ellem do
+defmodule Camel do
   @moduledoc """
-  Documentation for `Ellem`.
+  Documentation for `Camel`.
   """
 
   use Rustler,
-    otp_app: :ellem,
-    crate: :ellem
+    otp_app: :camel,
+    crate: :camel
 
   def get_accelerator(), do: :erlang.nif_error(:nif_not_loaded)
   def simple_chat(_, _), do: :erlang.nif_error(:nif_not_loaded)
 
-  def camel(_), do: :erlang.nif_error(:nif_not_loaded)
+  def new(_), do: :erlang.nif_error(:nif_not_loaded)
   def generate(_, _), do: :erlang.nif_error(:nif_not_loaded)
 
   @doc """
@@ -18,7 +18,7 @@ defmodule Ellem do
 
   ## Examples
 
-      iex> Ellem.hello()
+      iex> Camel.hello()
       :world
 
   """

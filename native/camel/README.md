@@ -1,4 +1,4 @@
-# NIF for Elixir.Ellem
+# NIF for Elixir.Camel
 
 https://github.com/LLukas22/llm-rs-python/blob/main/src/lib.rs - using as a starting point.
 
@@ -9,8 +9,8 @@ https://github.com/LLukas22/llm-rs-python/blob/main/src/lib.rs - using as a star
 ## To load the NIF:
 
 ```elixir
-defmodule Ellem do
-  use Rustler, otp_app: :ellem, crate: "ellem"
+defmodule Camel do
+  use Rustler, otp_app: :ellem, crate: "camel"
 
   # When your NIF is loaded, it will override this function.
   def add(_a, _b), do: :erlang.nif_error(:nif_not_loaded)

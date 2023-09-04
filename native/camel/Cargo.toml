@@ -1,11 +1,11 @@
 [package]
-name = "ellem"
+name = "camel"
 version = "0.1.0"
 authors = []
 edition = "2021"
 
 [lib]
-name = "ellem"
+name = "camel"
 path = "src/lib.rs"
 crate-type = ["cdylib"]
 

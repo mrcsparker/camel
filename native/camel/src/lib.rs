@@ -53,8 +53,8 @@ fn simple_chat(model_path: String, prompt: String) {
 }
 
 rustler::init!(
-    "Elixir.Ellem",
-    [get_accelerator, simple_chat, camel::camel, camel::generate],
+    "Elixir.Camel",
+    [get_accelerator, simple_chat, camel::new, camel::generate],
     load = load
 );
 
