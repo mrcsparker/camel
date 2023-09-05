@@ -28,7 +28,7 @@ impl CamelContext {
             .collect::<Vec<_>>()
     }
 
-    pub fn embeddings(&self) -> Vec<f64> {
+    pub fn embeddings(&self, query: &str) -> Vec<f32> {
         let model = self.model.as_ref();
 
         let default_inference_session_config = InferenceSessionConfig::default();
@@ -40,28 +40,21 @@ impl CamelContext {
         };
         let mut session = self.model.start_session(config);
 
-        if let Err(InferenceError::ContextFull) = session.feed_prompt::<Infallible, &str>(
-            model,
-            "What is your name?",
-            &mut Default::default(),
-            |_| Ok(InferenceFeedback::Continue),
-        ) {
-            panic!("Context window full");
-        }
-
-        let end_token = self.tokenize("\n");
-
         let mut output_request = OutputRequest {
             all_logits: None,
             embeddings: Some(Vec::new()),
         };
 
-        model.evaluate(&mut session, &end_token, &mut output_request);
+        let vocab = model.tokenizer();
+        let beginning_of_sentence = true;
 
-        let output: Option<Vec<f64>> = output_request
-            .embeddings
-            .map(|embd| embd.into_iter().map(|data| data.into()).collect());
-
-        output.unwrap_or_default()
+        let query_token_ids = vocab
+            .tokenize(query, beginning_of_sentence)
+            .unwrap()
+            .iter()
+            .map(|(_, tok)| *tok)
+            .collect::<Vec<_>>();
+        model.evaluate(&mut session, &query_token_ids, &mut output_request);
+        output_request.embeddings.unwrap()
     }
 }
