@@ -1,6 +1,7 @@
 use std::path::Path;
 
 use llm::models::Llama;
+use llm::Model;
 use llm_base::ModelParameters;
 
 pub struct CamelLoad {
@@ -34,12 +35,12 @@ pub struct CamelLoad {
 }
 
 impl CamelLoad {
-    pub fn load(&self) -> Llama {
+    pub fn load(&self) -> Box<dyn Model> {
         let params = self.params();
 
         let path = Path::new(&self.model_path);
 
-        llm::load::<llm::models::Llama>(
+        let model = llm::load::<llm::models::Llama>(
             // path to GGML file
             path,
             // Tokenizer
@@ -49,7 +50,8 @@ impl CamelLoad {
             // load progress callback
             llm::load_progress_callback_stdout,
         )
-        .unwrap_or_else(|err| panic!("Failed to load model: {err}"))
+        .unwrap_or_else(|err| panic!("Failed to load model: {err}"));
+        Box::new(model)
     }
 
     fn params(&self) -> ModelParameters {
