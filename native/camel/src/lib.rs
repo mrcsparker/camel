@@ -3,6 +3,9 @@ use llm_base::{Model, Prompt};
 use std::io::Write;
 
 pub mod camel;
+pub mod context;
+pub mod generate;
+pub mod load;
 
 #[rustler::nif]
 fn get_accelerator() -> String {

@@ -4,6 +4,9 @@ Prototype for LLM in Elixir.
 
 Ellem.accelerator
 
+Heavily based on:
+https://github.com/Atome-FE/llama-node/
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
