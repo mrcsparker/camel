@@ -1,3 +1,5 @@
+use llm_base::TokenBias;
+
 pub struct CamelGenerate {
     /// Sets the number of threads to use
     /// Default is 4

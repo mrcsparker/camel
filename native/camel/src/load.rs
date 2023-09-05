@@ -39,7 +39,7 @@ impl CamelLoad {
 
         let path = Path::new(&self.model_path);
 
-        let llama = llm::load::<llm::models::Llama>(
+        llm::load::<llm::models::Llama>(
             // path to GGML file
             path,
             // Tokenizer
@@ -49,9 +49,7 @@ impl CamelLoad {
             // load progress callback
             llm::load_progress_callback_stdout,
         )
-        .unwrap_or_else(|err| panic!("Failed to load model: {err}"));
-
-        llama
+        .unwrap_or_else(|err| panic!("Failed to load model: {err}"))
     }
 
     fn params(&self) -> ModelParameters {
