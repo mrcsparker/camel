@@ -2,7 +2,7 @@
 
 Prototype for LLM in Elixir.
 
-Ellem.accelerator
+Camel.get_accelerator
 
 Heavily based on:
 https://github.com/Atome-FE/llama-node/
