@@ -2,6 +2,7 @@ use llm::models::Llama;
 use llm_base::{Model, Prompt};
 use std::io::Write;
 
+pub mod auto_model;
 pub mod camel;
 pub mod context;
 pub mod generate;
